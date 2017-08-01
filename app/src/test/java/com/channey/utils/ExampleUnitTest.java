@@ -1,4 +1,4 @@
-package com.channey.myapplication;
+package com.channey.utils;
 
 import org.junit.Test;
 

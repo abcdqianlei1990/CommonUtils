@@ -1,4 +1,4 @@
-package com.channey.myapplication;
+package com.channey.utils;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.channey.myapplication", appContext.getPackageName());
+        assertEquals("com.channey.utils", appContext.getPackageName());
     }
 }

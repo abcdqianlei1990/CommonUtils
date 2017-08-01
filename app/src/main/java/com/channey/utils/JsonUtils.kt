@@ -1,4 +1,4 @@
-package com.channey.myapplication
+package com.channey.utils
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
