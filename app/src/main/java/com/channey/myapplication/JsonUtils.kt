@@ -1,0 +1,57 @@
+package com.channey.myapplication
+
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.lang.reflect.Type
+import java.util.ArrayList
+
+/**
+ * Created by channey on 2017/8/1.
+ */
+object JsonUtils {
+    /**
+     * 将json数组字符串转为ArrayList<T>
+     * @param json the string from which the object is to be deserialized
+     * *
+     * @param classOfT the class of T
+     * *
+     * @param <T> the type of the desired object
+     * *
+     * @return
+    </T></T> */
+    fun <T> json2Array(json: String, classOfT: Class<T>): ArrayList<T> {
+        val gson = Gson()
+        val type = object : TypeToken<ArrayList<T>>() {
+
+        }.type as Type
+        val list = gson.fromJson<ArrayList<T>>(json, type)
+        return list
+    }
+
+    /**
+     * 将json转为指定对象
+     * @param json the string from which the object is to be deserialized
+     * *
+     * @param classOfT the class of T
+     * *
+     * @param <T> the type of the desired object
+     * *
+     * @return
+    </T> */
+    fun <T> json2Object(json: String, classOfT: Class<T>): T {
+        val gson = Gson()
+        val obj = gson.fromJson(json, classOfT)
+        return obj
+    }
+
+    /**
+     * 将对象转为json字符串
+     * @param src the object for which Json representation is to be created setting for Gson
+     * *
+     * @return
+     */
+    fun toJson(src: Any): String {
+        val gson = Gson()
+        return gson.toJson(src)
+    }
+}
