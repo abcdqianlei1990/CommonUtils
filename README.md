@@ -1,6 +1,8 @@
 # CommonUtils
 工具类库
 
+#欢迎提交代码，一起完善！！！
+
 ##import：
 ##Step 1.Add it in your root build.gradle at the end of repositories:
 
