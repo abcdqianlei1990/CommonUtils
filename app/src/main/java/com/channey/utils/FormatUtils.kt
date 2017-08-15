@@ -5,6 +5,9 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.PixelFormat
 import android.graphics.drawable.Drawable
+import android.util.Base64
+import java.io.ByteArrayOutputStream
+import java.io.IOException
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -86,5 +89,35 @@ object FormatUtils {
         drawable.draw(canvas)
         return bitmap
 
+    }
+
+    fun bitmapToBase64(bitmap: Bitmap): String? {
+        var result: String? = null
+        var baos: ByteArrayOutputStream? = null
+        try {
+            if (bitmap != null) {
+                baos = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+
+                baos.flush()
+                baos.close()
+
+                val bitmapBytes = baos.toByteArray()
+                result = Base64.encodeToString(bitmapBytes, Base64.DEFAULT)
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        } finally {
+            try {
+                if (baos != null) {
+                    baos.flush()
+                    baos.close()
+                }
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+
+        }
+        return result
     }
 }

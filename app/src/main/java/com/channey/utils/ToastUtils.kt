@@ -8,14 +8,17 @@ import android.widget.Toast
  * toast util
  */
 object ToastUtils {
-
+    lateinit var toast:Toast
     /**
      * show toast
      * @param context
      * @param msg 显示内容
      */
     fun showToast(context:Context,msg:String){
-        Toast.makeText(context,msg,Toast.LENGTH_SHORT).show()
+        if(toast == null){
+            toast = Toast.makeText(context,msg,Toast.LENGTH_SHORT);
+        }
+        toast.show()
     }
 
 
