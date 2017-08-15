@@ -8,7 +8,7 @@ import android.widget.Toast
  * toast util
  */
 object ToastUtils {
-    lateinit var toast:Toast
+    var toast:Toast? = null
     /**
      * show toast
      * @param context
@@ -18,7 +18,7 @@ object ToastUtils {
         if(toast == null){
             toast = Toast.makeText(context,msg,Toast.LENGTH_SHORT);
         }
-        toast.show()
+        toast!!.show()
     }
 
 
