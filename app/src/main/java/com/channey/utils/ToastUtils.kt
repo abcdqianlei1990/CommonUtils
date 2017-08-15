@@ -15,9 +15,7 @@ object ToastUtils {
      * @param msg 显示内容
      */
     fun showToast(context:Context,msg:String){
-        if(toast == null){
-            toast = Toast.makeText(context,msg,Toast.LENGTH_SHORT);
-        }
+        toast = Toast.makeText(context,msg,Toast.LENGTH_SHORT);
         toast!!.show()
     }
 
