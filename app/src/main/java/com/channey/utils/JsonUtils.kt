@@ -1,6 +1,7 @@
 package com.channey.utils
 
 import com.google.gson.Gson
+import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
 import java.lang.reflect.Type
 import java.util.ArrayList
@@ -13,19 +14,23 @@ object JsonUtils {
      * 将json数组字符串转为ArrayList<T>
      * @param json the string from which the object is to be deserialized
      * *
-     * @param classOfT the class of T
+     * @param clazz the class of T
      * *
      * @param <T> the type of the desired object
      * *
      * @return
     </T></T> */
-    fun <T> json2Array(json: String, classOfT: Class<T>): ArrayList<T> {
-        val gson = Gson()
-        val type = object : TypeToken<ArrayList<T>>() {
+    fun <T> jsonToArrayList(json: String, clazz: Class<T>): ArrayList<T> {
+        val type = object : TypeToken<ArrayList<JsonObject>>() {
 
-        }.type as Type
-        val list = gson.fromJson<ArrayList<T>>(json, type)
-        return list
+        }.type
+        val jsonObjects = Gson().fromJson<ArrayList<JsonObject>>(json, type)
+
+        val arrayList = ArrayList<T>()
+        for (jsonObject in jsonObjects) {
+            arrayList.add(Gson().fromJson(jsonObject, clazz))
+        }
+        return arrayList
     }
 
     /**
