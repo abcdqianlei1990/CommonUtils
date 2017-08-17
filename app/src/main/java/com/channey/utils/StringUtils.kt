@@ -572,4 +572,42 @@ object StringUtils {
         return sb.toString()
 
     }
+
+    /**
+     * 后端返回数据如：************1234  ，  ***********1234 （始终显示最后4位，前面显示*号）
+     * 处理后的数据为：**** **** **** 1234 ，*** **** **** 1234
+     */
+    fun formatBankCardNumber(string: String):String{
+        var number = StringBuilder(string).reverse().toString()
+        var temp = number.length / 4
+        var sb = StringBuffer()
+        var tempSb = StringBuffer() //存储结果数据
+        if (number.length % 4 == 0){
+            for (i in 0..temp-1){
+                var s = number.substring(i * 4, sb.length + 4)
+                sb.append(s)
+                tempSb.append(s)
+                if (i != temp-1){
+                    tempSb.append(" ")
+                }
+            }
+        }else{
+            for (i in 0..temp){
+                var s = ""
+                if (i == temp){
+                    s = number.substring(sb.length, number.length)
+                    sb.append(s)
+                    tempSb.append(s)
+                }else{
+                    s = number.substring(i * 4, sb.length + 4)
+                    sb.append(s)
+                    tempSb.append(s)
+                }
+                if (i != temp){
+                    tempSb.append(" ")
+                }
+            }
+        }
+        return tempSb.reverse().toString()
+    }
 }
