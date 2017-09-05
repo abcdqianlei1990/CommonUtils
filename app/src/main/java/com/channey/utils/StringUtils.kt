@@ -578,7 +578,16 @@ object StringUtils {
      * 处理后的数据为：**** **** **** 1234 ，*** **** **** 1234
      */
     fun formatBankCardNumber(string: String):String{
-        var number = StringBuilder(string).reverse().toString()
+        //将传入的字符串除了后4位都转为*
+        var sb1 = StringBuilder()
+        var str = string.substring(string.length-4,string.length)
+        for (i in 0..(string.length-4-1)){
+            sb1.append("*")
+        }
+        sb1.append(str)
+
+        //增加空格 （每四位增加一个空格）
+        var number = StringBuilder(sb1.toString()).reverse().toString()
         var temp = number.length / 4
         var sb = StringBuffer()
         var tempSb = StringBuffer() //存储结果数据
