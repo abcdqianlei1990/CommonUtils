@@ -4,9 +4,8 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.os.StrictMode
 import android.text.TextUtils
-import java.io.IOException
-import java.io.InputStreamReader
-import java.io.LineNumberReader
+import java.io.*
+
 
 /**
  * Created by channey on 2017/8/2.
@@ -94,4 +93,35 @@ object DeviceUtils {
 //        }
 //        return result
 //    }
+
+    fun checkRootMethod1():Boolean{
+        var buildTags = android.os.Build.TAGS
+        return buildTags != null && buildTags.contains("test-keys")
+    }
+
+    fun checkRootMethod2():Boolean{
+        val paths = arrayOf("/system/app/Superuser.apk", "/sbin/su", "/system/bin/su", "/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", "/system/sd/xbin/su", "/system/bin/failsafe/su", "/data/local/su")
+        for (path in paths) {
+            if (File(path).exists()) return true
+        }
+        return false
+    }
+
+    fun checkRootMethod3():Boolean{
+        var process: Process? = null
+        try {
+            process = Runtime.getRuntime().exec(arrayOf("/system/xbin/which", "su"))
+            val ins = BufferedReader(InputStreamReader(process!!.inputStream))
+            if (ins.readLine() != null) return true
+            return false
+        } catch (t: Throwable) {
+            return false
+        } finally {
+            if (process != null) process.destroy()
+        }
+    }
+
+    fun isDeviceRooted(): Boolean {
+        return checkRootMethod1() || checkRootMethod2() || checkRootMethod3()
+    }
 }
