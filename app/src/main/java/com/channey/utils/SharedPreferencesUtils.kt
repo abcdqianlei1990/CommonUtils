@@ -66,4 +66,27 @@ object SharedPreferencesUtils {
         editor.remove(key)
         editor.commit()
     }
+
+    /**
+     * Set a long value in the preferences editor
+     * @param context
+     * @param key The name of the preference to modify.
+     * @param value The new value for the preference.
+     */
+    fun saveLong(context: Context, key: String, value: Long) {
+        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+        val editor = sp.edit()
+        editor.putLong(key, value)
+        editor.apply()
+    }
+
+    /**
+     * Retrieve a long value from the preferences.
+     * @param context
+     * @param key The name of the preference to modify.
+     */
+    fun getLong(context: Context, key: String): Long {
+        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+        return sp.getLong(key, 0)
+    }
 }
