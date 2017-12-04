@@ -16,5 +16,5 @@
 
 	dependencies {
           ...
-	        compile 'com.github.abcdqianlei1990:CommonUtils:1.0.6'
+	        compile 'com.github.abcdqianlei1990:CommonUtils:1.0.17'
 	}
