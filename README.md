@@ -1,3 +1,4 @@
+[![GitHub release](https://img.shields.io/github/release/abcdqianlei1990/CommonUtils.svg)](https://github.com/abcdqianlei1990/CommonUtils/releases)
 # CommonUtils
 工具类库
 
