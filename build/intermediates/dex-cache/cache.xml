@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/channey/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="/Users/channey/resposbility/CommonUtils/sample/build/intermediates/pre-dexed/debug/converter-gson-2.1.0_5a0cdeaa93fb8b256bfd558da56085b405aa26c9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/channey/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.3-2/9b44c139a4ec57031e0c84ba0e49ba16df6d801c/kotlin-stdlib-1.1.3-2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9b44c139a4ec57031e0c84ba0e49ba16df6d801c">
+        <dex dex="/Users/channey/resposbility/CommonUtils/sample/build/intermediates/pre-dexed/debug/kotlin-stdlib-1.1.3-2_a1d42efcdd3a7c316cd3e5ecc262c962ab10b1a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/channey/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/Users/channey/resposbility/CommonUtils/sample/build/intermediates/pre-dexed/debug/retrofit-2.1.0_39db4b463c5212f40086a8b7a07905e035d21549.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/channey/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/channey/resposbility/CommonUtils/sample/build/intermediates/pre-dexed/debug/okio-1.8.0_afaff8eb9ee30f97d5b8d5a4129795758c8121e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/channey/resposbility/CommonUtils/app/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5241e821189fdd99f8c9db36b9e62453c4ba3db0">
+        <dex dex="/Users/channey/resposbility/CommonUtils/sample/build/intermediates/pre-dexed/debug/classes_7960f02ad5f5845c729541cb6a3445750ccaa634.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/channey/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/channey/resposbility/CommonUtils/sample/build/intermediates/pre-dexed/debug/gson-2.7_228355d8c5a706dc15f12bd0e8de74b1f97162ad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/channey/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre7/1.1.3-2/3fe54c7558c903868351ac79b792d152bca958f2/kotlin-stdlib-jre7-1.1.3-2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3fe54c7558c903868351ac79b792d152bca958f2">
+        <dex dex="/Users/channey/resposbility/CommonUtils/sample/build/intermediates/pre-dexed/debug/kotlin-stdlib-jre7-1.1.3-2_e1232ceb5d50fe8763d531258c1b9ae11ec2bb66.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/channey/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="919f0dfe192fb4e063e7dacadee7f8bb9a2672a9">
+        <dex dex="/Users/channey/resposbility/CommonUtils/sample/build/intermediates/pre-dexed/debug/annotations-13.0_82985e683cbaf2889189531d33f46be9d3f49c42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/channey/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.0/2b802460eea20f8f2ad9c08c74e0f14718e88aa9/okhttp-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="/Users/channey/resposbility/CommonUtils/sample/build/intermediates/pre-dexed/debug/okhttp-3.3.0_5daab9599bc87aa10fbd961d7de6b746336da84f.jar" />
+    </item>
+
+</items>

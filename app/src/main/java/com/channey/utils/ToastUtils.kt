@@ -5,19 +5,33 @@ import android.widget.Toast
 
 /**
  * Created by channey on 2017/8/2.
- * toast util
+ * mToast util
  */
 object ToastUtils {
-    var toast:Toast? = null
+    private var mToast:Toast? = null
+
+    /** mToast last show time*/
+    private var mLastShowTime:Long = 0
+
+    private var DURATION_TIME_OUT = 2000 //ms
+
     /**
-     * show toast
+     * show mToast
      * @param context
-     * @param msg 显示内容
+     * @param msg message for show
      */
     fun showToast(context:Context,msg:String){
-        toast = Toast.makeText(context,msg,Toast.LENGTH_SHORT);
-        toast!!.show()
+        var currentTime = System.currentTimeMillis()
+        var temp = currentTime - mLastShowTime
+        if (temp >= DURATION_TIME_OUT){
+            if (mToast == null){
+                mToast = Toast.makeText(context,msg,Toast.LENGTH_SHORT);
+            }else{
+                mToast!!.setText(msg)
+            }
+            mLastShowTime = currentTime
+            mToast!!.show()
+        }
     }
-
 
 }
