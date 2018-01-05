@@ -150,27 +150,15 @@ object StringUtils {
      * @return
      */
     fun doubleFormat(value: Double, count: Int): String {
-        val sb = StringBuilder("###.00")
-        val df: DecimalFormat
-        if (count <= 2) {
-
-        } else if (count >= 8) {
-            sb.append("000000")
-        } else {
-            for (i in 0..count - 2 - 1) {
-                sb.append("0")
-            }
+        val sb = StringBuilder("###.")
+        for(i in 1..count){
+            sb.append("#")
         }
-        df = DecimalFormat(sb.toString())
-        //如果最后位数是0,去掉0，如123.00 返回123，123.10 返回123.1
+        val df = DecimalFormat(sb.toString())
         var s = df.format(value)
         if (s.startsWith(".")) {  //0.35 format后字符串为".35"，为了处理该种情况
             s = "0" + s
         }
-        //        StringBuilder builder = new StringBuilder(s);
-        //        while(builder.toString().contains(".") && builder.charAt(builder.length()-1) == '0' || builder.charAt(builder.length()-1) == '.'){
-        //            builder.deleteCharAt(builder.length()-1);
-        //        }
         return s
     }
 

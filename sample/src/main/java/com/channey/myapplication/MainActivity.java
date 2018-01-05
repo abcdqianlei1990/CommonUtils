@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.channey.utils.StringUtils;
 import com.channey.utils.ToastUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         showToastBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastUtils.INSTANCE.showToast(MainActivity.this,"this is a toast !"+System.currentTimeMillis());
+                ToastUtils.INSTANCE.showToast(MainActivity.this,StringUtils.INSTANCE.doubleFormat(0.3500000000000008,8));
             }
         });
     }
