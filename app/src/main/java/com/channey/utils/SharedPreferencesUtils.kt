@@ -2,6 +2,8 @@ package com.channey.utils
 
 import android.app.Activity
 import android.content.Context
+import java.util.*
+import kotlin.collections.HashSet
 
 /**
  * Created by channey on 2017/8/2.
@@ -46,6 +48,19 @@ object SharedPreferencesUtils {
     }
 
     /**
+     * Set a String set value in the preferences editor
+     * @param context
+     * @param key The name of the preference to modify.
+     * @param value The new value for the preference.
+     */
+    fun saveStringSet(context:Context,key: String, value: Set<String>) {
+        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+        val editor = sp.edit()
+        editor.putStringSet(key, value)
+        editor.commit()
+    }
+
+    /**
      * Retrieve a String value from the preferences.
      * @param context
      * @param key The name of the preference to modify.
@@ -53,6 +68,11 @@ object SharedPreferencesUtils {
     fun getString(context:Context,key: String): String {
         val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
         return sp.getString(key, "")
+    }
+
+    fun getStringSet(context:Context,key: String): Set<String> {
+        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+        return sp.getStringSet(key, HashSet<String>())
     }
 
     /**

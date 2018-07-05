@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button showToastBtn = (Button) findViewById(R.id.show_toast);
+        String doubleFormat = StringUtils.INSTANCE.doubleFormat(1500.00, 2);
         showToastBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
