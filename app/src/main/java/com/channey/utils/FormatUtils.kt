@@ -29,6 +29,7 @@ object FormatUtils {
     fun string2TimeStamp(format: String, date: String): Long {
         var temp: Long = 0
         val sdf = SimpleDateFormat(format)
+        sdf.timeZone = TimeZone.getTimeZone("GMT+8") //设置时区
         try {
             val d = sdf.parse(date)
             temp = d.time
@@ -50,6 +51,7 @@ object FormatUtils {
     fun timeStamp2String(stamp: Long, format: String): String {
         var date: String? = null
         val sdf = SimpleDateFormat(format)
+        sdf.timeZone = TimeZone.getTimeZone("GMT+8") //设置时区
         date = sdf.format(Date(stamp))//单位秒
         return date
     }
