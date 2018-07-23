@@ -1,5 +1,6 @@
 package com.channey.myapplication;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button showToastBtn = (Button) findViewById(R.id.show_toast);
         String doubleFormat = StringUtils.INSTANCE.doubleFormat(1500.00, 2);
-        Set<String> set = SharedPreferencesUtils.INSTANCE.getStringSet(this, "test");
+        Set<String> set = SharedPreferencesUtils.INSTANCE.getStringSet(this, "test", Activity.MODE_PRIVATE);
         String date1 = FormatUtils.INSTANCE.timeStamp2String(Long.parseLong("1530765537000"),"yyyy.MM.dd HH:mm:ss");
         long stamp = FormatUtils.INSTANCE.string2TimeStamp("yyyy.MM.dd HH:mm:ss", date1);
         Log.d("qian","date="+date1+",stamp="+stamp);
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 Set<String> set1 = new HashSet<String>();
                 set1.add("1234");
                 set1.add("5555");
-                SharedPreferencesUtils.INSTANCE.saveStringSet(MainActivity.this,"",set1);
+                SharedPreferencesUtils.INSTANCE.saveStringSet(MainActivity.this,"",set1, Activity.MODE_PRIVATE);
                 ToastUtils.INSTANCE.showToast(MainActivity.this,StringUtils.INSTANCE.doubleFormat(0.3500000000000008,8));
             }
         });

@@ -17,8 +17,8 @@ object SharedPreferencesUtils {
      * @param key The name of the preference to modify.
      * @param value The new value for the preference.
      */
-    fun saveBoolean(context:Context,key: String, value: Boolean) {
-        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+    fun saveBoolean(context:Context,key: String, value: Boolean,mode:Int = Activity.MODE_PRIVATE) {
+        val sp = context.getSharedPreferences(FILE_NAME, mode)
         val editor = sp.edit()
         editor.putBoolean(key, value)
         editor.commit()
@@ -29,8 +29,8 @@ object SharedPreferencesUtils {
      * @param context
      * @param key The name of the preference to modify.
      */
-    fun getBoolean(context:Context,key: String): Boolean? {
-        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+    fun getBoolean(context:Context,key: String,mode:Int = Activity.MODE_PRIVATE): Boolean? {
+        val sp = context.getSharedPreferences(FILE_NAME, mode)
         return sp.getBoolean(key, false)
     }
 
@@ -40,8 +40,8 @@ object SharedPreferencesUtils {
      * @param key The name of the preference to modify.
      * @param value The new value for the preference.
      */
-    fun saveString(context:Context,key: String, value: String) {
-        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+    fun saveString(context:Context,key: String, value: String,mode:Int = Activity.MODE_PRIVATE) {
+        val sp = context.getSharedPreferences(FILE_NAME, mode)
         val editor = sp.edit()
         editor.putString(key, value)
         editor.commit()
@@ -53,8 +53,8 @@ object SharedPreferencesUtils {
      * @param key The name of the preference to modify.
      * @param value The new value for the preference.
      */
-    fun saveStringSet(context:Context,key: String, value: Set<String>) {
-        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+    fun saveStringSet(context:Context,key: String, value: Set<String>,mode:Int = Activity.MODE_PRIVATE) {
+        val sp = context.getSharedPreferences(FILE_NAME, mode)
         val editor = sp.edit()
         editor.putStringSet(key, value)
         editor.commit()
@@ -65,13 +65,13 @@ object SharedPreferencesUtils {
      * @param context
      * @param key The name of the preference to modify.
      */
-    fun getString(context:Context,key: String): String {
-        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+    fun getString(context:Context,key: String,mode:Int = Activity.MODE_PRIVATE): String {
+        val sp = context.getSharedPreferences(FILE_NAME, mode)
         return sp.getString(key, "")
     }
 
-    fun getStringSet(context:Context,key: String): Set<String> {
-        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+    fun getStringSet(context:Context,key: String,mode:Int = Activity.MODE_PRIVATE): Set<String> {
+        val sp = context.getSharedPreferences(FILE_NAME, mode)
         return sp.getStringSet(key, HashSet<String>())
     }
 
@@ -80,8 +80,8 @@ object SharedPreferencesUtils {
      * @param context
      * @param key The name of the preference to modify.
      */
-    fun remove(context:Context,key: String) {
-        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+    fun remove(context:Context,key: String,mode:Int = Activity.MODE_PRIVATE) {
+        val sp = context.getSharedPreferences(FILE_NAME, mode)
         val editor = sp.edit()
         editor.remove(key)
         editor.commit()
@@ -93,8 +93,8 @@ object SharedPreferencesUtils {
      * @param key The name of the preference to modify.
      * @param value The new value for the preference.
      */
-    fun saveLong(context: Context, key: String, value: Long) {
-        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+    fun saveLong(context: Context, key: String, value: Long,mode:Int = Activity.MODE_PRIVATE) {
+        val sp = context.getSharedPreferences(FILE_NAME, mode)
         val editor = sp.edit()
         editor.putLong(key, value)
         editor.apply()
@@ -105,8 +105,8 @@ object SharedPreferencesUtils {
      * @param context
      * @param key The name of the preference to modify.
      */
-    fun getLong(context: Context, key: String): Long {
-        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+    fun getLong(context: Context, key: String,mode:Int = Activity.MODE_PRIVATE): Long {
+        val sp = context.getSharedPreferences(FILE_NAME, mode)
         return sp.getLong(key, 0)
     }
 }
