@@ -607,4 +607,72 @@ object StringUtils {
         }
         return tempSb.reverse().toString()
     }
+
+    /**
+     * 中文进行utf8转码
+     */
+    fun encodedUTF8(value: String): String {
+        val newValue = value.replace("\n", "")
+        var i = 0
+        val length = newValue.length
+        while (i < length) {
+            val c = newValue[i]
+            if (c <= '\u001f' || c >= '\u007f') {
+                try {
+                    return URLEncoder.encode(newValue, "UTF-8")
+                } catch (e: UnsupportedEncodingException) {
+                    e.printStackTrace()
+                }
+
+            }
+            i++
+        }
+        return newValue
+    }
+
+    /**
+     * 中文进行utf8解码
+     */
+    fun decodedUTF8(value: String): String {
+        try {
+            return URLDecoder.decode(value, "UTF-8")
+        } catch (e: UnsupportedEncodingException) {
+            e.printStackTrace()
+        }
+
+        return ""
+    }
+
+    /**
+     * 判断是否含有特殊字符
+     *
+     * @param str
+     * @return true为包含，false为不包含
+     */
+    fun containsSpecialChar(str: String): Boolean {
+        val regEx = "[ _`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]|\n|\r|\t"
+        val p = Pattern.compile(regEx)
+        val m = p.matcher(str)
+        return m.find()
+    }
+
+    /**
+     * 字符串是否是纯中文
+     * @param str
+     */
+    fun isChineseStr(str:String): Boolean {
+        var arr = str.toCharArray()
+        for (c in arr){
+            val ub = Character.UnicodeBlock.of(c)
+            if (ub === Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
+                    || ub === Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS
+                    || ub === Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A
+                    || ub === Character.UnicodeBlock.GENERAL_PUNCTUATION
+                    || ub === Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION
+                    || ub === Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS) {
+                return true
+            }
+        }
+        return false
+    }
 }

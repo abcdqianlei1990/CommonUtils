@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import android.os.StrictMode
 import android.text.TextUtils
 import java.io.*
+import java.util.ArrayList
 
 
 /**
@@ -123,5 +124,24 @@ object DeviceUtils {
 
     fun isDeviceRooted(): Boolean {
         return checkRootMethod1() || checkRootMethod2() || checkRootMethod3()
+    }
+
+    /**
+     * 是否安装app
+     * @param context
+     * @param packageName
+     * @return 有TRUE，没有FALSE
+     */
+    fun haveInstalledApp(context: Context, packageName: String): Boolean {
+        val packageManager = context.packageManager
+        val packageInfos = packageManager.getInstalledPackages(0)
+        val packageNames = ArrayList<String>()
+        if (packageInfos != null) {
+            for (i in packageInfos) {
+                val packName = i.packageName
+                packageNames.add(packName)
+            }
+        }
+        return packageNames.contains(packageName)
     }
 }
