@@ -16,6 +16,6 @@
 ```groovy
 	dependencies {
           ...
-	        compile 'com.github.abcdqianlei1990:CommonUtils:1.18'
+	        compile 'com.github.abcdqianlei1990:CommonUtils:2.5'
 	}
 ```
