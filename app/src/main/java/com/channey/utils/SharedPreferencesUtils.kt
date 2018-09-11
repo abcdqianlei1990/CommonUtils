@@ -220,7 +220,7 @@ object SharedPreferencesUtils {
         val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
         val editor = sp.edit()
         editor.putInt("$key-size",value.size)
-        for (i in 0 until value.size-1){
+        for (i in 0 until value.size){
             editor.putString("$key-$i",value[i])
         }
         editor.apply()
@@ -235,7 +235,7 @@ object SharedPreferencesUtils {
         val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
         val size = sp.getInt("$key-size", 0)
         var list = ArrayList<String>()
-        for (i in 0 until size-1){
+        for (i in 0 until size){
             val s = sp.getString("$key-$i", "")
             if (!StringUtils.isEmpty(s)){
                 list.add(s)
@@ -253,7 +253,7 @@ object SharedPreferencesUtils {
         val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
         var size = sp.getInt("$key-size",0)
         val editor = sp.edit()
-        for (i in 0 until size-1){
+        for (i in 0 until size){
             editor.remove("$key-$i")
         }
         editor.remove("$key-size")
