@@ -12,6 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="80390010-86cf-4df4-b06e-942dbf2cc9bc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/channey/utils/SharedPreferencesUtils.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/channey/utils/SharedPreferencesUtils.kt" />
     </list>
     <ignored path="CommonUtils.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,81 +43,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FormatUtils.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/FormatUtils.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="31" column="59" lean-forward="false" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringUtils.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/StringUtils.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9495">
-              <caret line="633" column="17" lean-forward="false" selection-start-line="633" selection-start-column="7" selection-end-line="633" selection-end-column="17" />
-              <folding>
-                <element signature="e#27#413#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommonUtils.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/CommonUtils.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-              <folding>
-                <element signature="e#27#129#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SharedPreferencesUtils.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/SharedPreferencesUtils.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="95" column="92" lean-forward="false" selection-start-line="95" selection-start-column="71" selection-end-line="95" selection-end-column="92" />
+            <state relative-caret-position="333">
+              <caret line="214" column="18" lean-forward="false" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceUtils.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/DeviceUtils.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1935">
-              <caret line="129" column="14" lean-forward="false" selection-start-line="129" selection-start-column="7" selection-end-line="129" selection-end-column="14" />
-              <folding>
-                <element signature="e#27#199#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ValueAnimator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-25/android/animation/ValueAnimator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11880">
-              <caret line="838" column="16" lean-forward="false" selection-start-line="838" selection-start-column="16" selection-end-line="838" selection-end-column="16" />
-              <folding>
-                <element signature="e#36177#36178#0" expanded="true" />
-                <element signature="e#36212#36213#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -3194,13 +3126,13 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/channey/utils/ToastUtils.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/channey/utils/FormatUtils.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/channey/utils/SharedPreferencesUtils.kt" />
-        <option value="$PROJECT_DIR$/sample/src/main/java/com/channey/myapplication/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/channey/utils/AnimatorUtils.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/channey/utils/Keys.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/channey/utils/DeviceUtils.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/channey/utils/StringUtils.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/channey/utils/CommonUtils.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/channey/utils/SharedPreferencesUtils.kt" />
+        <option value="$PROJECT_DIR$/sample/src/main/java/com/channey/myapplication/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -3224,10 +3156,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -3317,6 +3249,36 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CommonUtils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommonUtils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="sample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommonUtils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommonUtils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="sample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="channey" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommonUtils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommonUtils" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="sample" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="channey" type="462c0819:PsiDirectoryNode" />
+              <item name="myapplication" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -3333,7 +3295,7 @@
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="show.migrate.to.gradle.popup" value="false" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1536110828346" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1536650084405" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -3737,6 +3699,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="789" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3755,7 +3718,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3184438" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3184438" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -3826,13 +3789,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/ToastUtils.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/FormatUtils.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
@@ -4047,13 +4003,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/ToastUtils.kt">
@@ -4091,14 +4047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample/src/main/java/com/channey/myapplication/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="30" column="106" lean-forward="false" selection-start-line="30" selection-start-column="106" selection-end-line="30" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-25/android/animation/ValueAnimator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11880">
@@ -4129,7 +4077,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/FormatUtils.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="0">
           <caret line="31" column="59" lean-forward="false" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
           <folding />
         </state>
@@ -4145,7 +4093,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/StringUtils.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9495">
+        <state relative-caret-position="9330">
           <caret line="633" column="17" lean-forward="false" selection-start-line="633" selection-start-column="7" selection-end-line="633" selection-end-column="17" />
           <folding>
             <element signature="e#27#413#0" expanded="true" />
@@ -4155,7 +4103,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/DeviceUtils.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
+        <state relative-caret-position="1860">
           <caret line="129" column="14" lean-forward="false" selection-start-line="129" selection-start-column="7" selection-end-line="129" selection-end-column="14" />
           <folding>
             <element signature="e#27#199#0" expanded="true" />
@@ -4165,7 +4113,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/CommonUtils.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="240">
           <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
             <element signature="e#27#129#0" expanded="true" />
@@ -4175,16 +4123,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sample/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="465">
           <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample/src/main/java/com/channey/myapplication/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/channey/utils/SharedPreferencesUtils.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="95" column="92" lean-forward="false" selection-start-line="95" selection-start-column="71" selection-end-line="95" selection-end-column="92" />
+        <state relative-caret-position="333">
+          <caret line="214" column="18" lean-forward="false" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
           <folding />
         </state>
       </provider>

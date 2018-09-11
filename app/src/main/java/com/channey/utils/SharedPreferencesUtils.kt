@@ -3,6 +3,7 @@ package com.channey.utils
 import android.app.Activity
 import android.content.Context
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.collections.HashSet
 
 /**
@@ -207,5 +208,39 @@ object SharedPreferencesUtils {
     fun getLong(context: Context, key: String): Long {
         val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
         return sp.getLong(key, 0)
+    }
+
+    /**
+     * save string array
+     * @param context
+     * @param key
+     * @param value
+     */
+    fun saveStringList(context: Context, key: String, value: List<String>) {
+        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+        val editor = sp.edit()
+        editor.putInt("$key-size",value.size)
+        for (i in 0 until value.size-1){
+            editor.putString("$key-$i",value[i])
+        }
+        editor.apply()
+    }
+
+    /**
+     * save string array
+     * @param context
+     * @param key
+     */
+    fun getStringList(context: Context, key: String): ArrayList<String> {
+        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+        val size = sp.getInt("$key-size", 0)
+        var list = ArrayList<String>()
+        for (i in 0 until size-1){
+            val s = sp.getString("$key-$i", "")
+            if (!StringUtils.isEmpty(s)){
+                list.add(s)
+            }
+        }
+        return list
     }
 }
