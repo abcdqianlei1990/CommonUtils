@@ -216,7 +216,7 @@ object SharedPreferencesUtils {
      * @param key
      * @param value
      */
-    fun saveStringList(context: Context, key: String, value: List<String>) {
+    fun saveStringArray(context: Context, key: String, value: List<String>) {
         val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
         val editor = sp.edit()
         editor.putInt("$key-size",value.size)
@@ -231,7 +231,7 @@ object SharedPreferencesUtils {
      * @param context
      * @param key
      */
-    fun getStringList(context: Context, key: String): ArrayList<String> {
+    fun getStringArray(context: Context, key: String): ArrayList<String> {
         val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
         val size = sp.getInt("$key-size", 0)
         var list = ArrayList<String>()
@@ -242,5 +242,21 @@ object SharedPreferencesUtils {
             }
         }
         return list
+    }
+
+    /**
+     * Mark in the editor that a preference value should be removed
+     * @param context
+     * @param key The name of the preference to modify.
+     */
+    fun removeStringArray(context:Context,key: String) {
+        val sp = context.getSharedPreferences(FILE_NAME, Activity.MODE_PRIVATE)
+        var size = sp.getInt("$key-size",0)
+        val editor = sp.edit()
+        for (i in 0 until size-1){
+            editor.remove("$key-$i")
+        }
+        editor.remove("$key-size")
+        editor.commit()
     }
 }
