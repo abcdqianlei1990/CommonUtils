@@ -2,6 +2,7 @@ package com.channey.myapplication;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -65,14 +66,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void shapeUtilTest(){
-//        Map<String,Object> map = new HashMap<>();
-//        map.put(ShapeUtil.PROPERTY_RADIUS,20f);
-//        map.put(ShapeUtil.PROPERTY_SOLID_COLOR,Color.YELLOW);
-//        map.put(ShapeUtil.PROPERTY_LEFTTOP_RADIUS,30f);
-//        map.put(ShapeUtil.PROPERTY_RIGHTTOP_RADIUS,30f);
-//        map.put(ShapeUtil.PROPERTY_RIGHTBOTTOM_RADIUS,60f);
-//        map.put(ShapeUtil.PROPERTY_STROKE_WIDTH,10);
-//        map.put(ShapeUtil.PROPERTY_STROKE_COLOR,Color.GREEN);
-//        ShapeUtil.INSTANCE.setShape(tv, map);
+        Map<String,Object> map = new HashMap<>();
+        map.put(ShapeUtil.PROPERTY_RADIUS,20f);
+        map.put(ShapeUtil.PROPERTY_SOLID_COLOR,Color.YELLOW);
+        map.put(ShapeUtil.PROPERTY_LEFTTOP_RADIUS,30f);
+        map.put(ShapeUtil.PROPERTY_RIGHTTOP_RADIUS,30f);
+        map.put(ShapeUtil.PROPERTY_RIGHTBOTTOM_RADIUS,60f);
+        map.put(ShapeUtil.PROPERTY_STROKE_WIDTH,10);
+        map.put(ShapeUtil.PROPERTY_STROKE_COLOR,Color.GREEN);
+        int[] colors = {getResources().getColor(R.color.FF9B00),getResources().getColor(R.color.FF6200)};
+        map.put(ShapeUtil.PROPERTY_GRADIENT_COLORS,colors);
+        map.put(ShapeUtil.PROPERTY_ORIENTATION, GradientDrawable.Orientation.LEFT_RIGHT);
+        ShapeUtil.INSTANCE.setShape(tv, map);
     }
 }

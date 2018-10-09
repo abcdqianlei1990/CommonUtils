@@ -13,6 +13,8 @@ object ShapeUtil {
     const val PROPERTY_RIGHTTOP_RADIUS = "rightTopRadius"
     const val PROPERTY_LEFTBOTTOM_RADIUS = "leftBottomRadius"
     const val PROPERTY_RIGHTBOTTOM_RADIUS = "rightBottomRadius"
+    const val PROPERTY_GRADIENT_COLORS = "colors"
+    const val PROPERTY_ORIENTATION = "orientation"
 
     /**
      * set shape to target view.
@@ -29,8 +31,20 @@ object ShapeUtil {
             var rightTopRadius:Float?
             var leftBottomRadius:Float?
             var rightBottomRadius:Float?
+            var colors:IntArray?
+            var orientation:GradientDrawable.Orientation?
             try {
                 solidColor = properties[PROPERTY_SOLID_COLOR] as Int?
+            }catch (e:ClassCastException){
+                throw Exception("solidColor must be a integer value.")
+            }
+            try {
+                colors = properties[PROPERTY_GRADIENT_COLORS] as IntArray?
+            }catch (e:ClassCastException){
+                throw Exception("solidColor must be IntArray.")
+            }
+            try {
+                orientation = properties[PROPERTY_ORIENTATION] as GradientDrawable.Orientation?
             }catch (e:ClassCastException){
                 throw Exception("solidColor must be a integer value.")
             }
@@ -72,6 +86,8 @@ object ShapeUtil {
 
             var drawable = GradientDrawable()
             if (solidColor != null) drawable.setColor(solidColor)
+            if (colors != null && colors.isNotEmpty()) drawable.colors = colors
+            if (orientation != null) drawable.orientation = orientation
             if (strokeColor != null || strokeWidth != null) {
                 if (strokeColor == null) strokeColor = Color.WHITE
                 if (strokeWidth == null) strokeWidth = 0
@@ -106,6 +122,7 @@ object ShapeUtil {
      * set shape to target view.
      * @param view target
      * @param solidColor
+     * @param gradientColors
      * @param strokeWidth
      * @param strokeColor
      * @param radius
@@ -113,6 +130,8 @@ object ShapeUtil {
     fun setShape(
             view: View,
             solidColor:Int = Color.WHITE,
+            gradientColors:IntArray ?= null,
+            orientation:GradientDrawable.Orientation ?= null,
             strokeWidth:Int = 1,
             strokeColor:Int = Color.WHITE,
             radius:Float = 0f,
@@ -123,6 +142,8 @@ object ShapeUtil {
     ){
         var drawable = GradientDrawable()
         drawable.setColor(solidColor)
+        if (gradientColors != null && gradientColors.isNotEmpty()) drawable.colors = gradientColors
+        if (orientation != null) drawable.orientation = orientation
         drawable.setStroke(strokeWidth,strokeColor)
         if (leftTopRadius != 0f || leftBottomRadius != 0f || rightTopRadius != 0f || rightBottomRadius != 0f){
             var array = floatArrayOf(
