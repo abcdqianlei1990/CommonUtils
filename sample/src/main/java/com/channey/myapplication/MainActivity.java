@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.channey.utils.CommonUtils;
+import com.channey.utils.DeviceUtils;
 import com.channey.utils.FormatUtils;
 import com.channey.utils.ShapeUtil;
 import com.channey.utils.SharedPreferencesUtils;
@@ -39,17 +41,13 @@ public class MainActivity extends AppCompatActivity {
         Set<String> set = SharedPreferencesUtils.INSTANCE.getStringSet(this, "test", Activity.MODE_PRIVATE);
         String date1 = FormatUtils.INSTANCE.timeStamp2String(Long.parseLong("1530765537000"),"yyyy.MM.dd HH:mm:ss");
         long stamp = FormatUtils.INSTANCE.string2TimeStamp("yyyy.MM.dd HH:mm:ss", date1);
-        Log.d("qian","date="+date1+",stamp="+stamp);
+        Log.d(TAG,"date="+date1+",stamp="+stamp);
 //        Log.d("qian","date2 : "+formatDate(1530765537000l));
 //        Log.d("qian","current date : "+formatDate(System.currentTimeMillis()));
         showToastBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Set<String> set1 = new HashSet<String>();
-                set1.add("1234");
-                set1.add("5555");
-                SharedPreferencesUtils.INSTANCE.saveStringSet(MainActivity.this,"",set1, Activity.MODE_PRIVATE);
-                ToastUtils.INSTANCE.showToast(MainActivity.this,StringUtils.INSTANCE.doubleFormat(0.3500000000000008,8));
+                ToastUtils.INSTANCE.showToast(MainActivity.this, CommonUtils.INSTANCE.sha1(MainActivity.this));
             }
         });
         shapeUtilTest();
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         Date date = new Date(timeStamp);
         String sd = sdf.format(date);
         String format = sdf.format(timeStamp);
-        Log.d("qian","sdf.format(timeStamp) = "+sdf.format(timeStamp));
+        Log.d(TAG,"sdf.format(timeStamp) = "+sdf.format(timeStamp));
         return sd;
     }
 

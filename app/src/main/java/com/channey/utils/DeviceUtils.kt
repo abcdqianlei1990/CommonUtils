@@ -1,6 +1,9 @@
 package com.channey.utils
 
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.StrictMode
 import android.text.TextUtils
@@ -143,5 +146,19 @@ object DeviceUtils {
             }
         }
         return packageNames.contains(packageName)
+    }
+
+    /**
+     * 重启app
+     * @param context
+     * @param cls 重启后需要打开的页面
+     */
+    fun restartApp(context: Context,cls: Class<*>) {
+        val mStartActivity = Intent(context, cls)
+        val mPendingIntentId = 123456
+        val mPendingIntent = PendingIntent.getActivity(context, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT)
+        val mgr = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent)
+        System.exit(0)
     }
 }
