@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button showToastBtn = (Button) findViewById(R.id.show_toast);
         tv = (TextView) findViewById(R.id.tv);
-        String doubleFormat = StringUtils.INSTANCE.doubleFormat(1500.00, 2);
         Set<String> set = SharedPreferencesUtils.INSTANCE.getStringSet(this, "test", Activity.MODE_PRIVATE);
         String date1 = FormatUtils.INSTANCE.timeStamp2String(Long.parseLong("1530765537000"),"yyyy.MM.dd HH:mm:ss");
         long stamp = FormatUtils.INSTANCE.string2TimeStamp("yyyy.MM.dd HH:mm:ss", date1);
@@ -48,9 +47,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ToastUtils.INSTANCE.showToast(MainActivity.this, CommonUtils.INSTANCE.sha1(MainActivity.this));
+                doubleFormat(1600.0);
             }
         });
         shapeUtilTest();
+
+    }
+
+    private void doubleFormat(double d){
+        Log.d("qian",StringUtils.INSTANCE.doubleFormat(d));
     }
 
     public String formatDate(long timeStamp){

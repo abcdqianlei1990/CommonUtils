@@ -142,24 +142,13 @@ object StringUtils {
     }
 
     /**
-     * 保留小数点后几位,默认保留2位,最多保留8位
+     * double转string，保留精度
      * @param value 待处理的值
-     * *
-     * @param count 想要保留的小数点后面的位数
-     * *
      * @return
      */
-    fun doubleFormat(value: Double, count: Int): String {
-        val sb = StringBuilder("###.")
-        for(i in 1..count){
-            sb.append("#")
-        }
-        val df = DecimalFormat(sb.toString())
-        var s = df.format(value)
-        if (s.startsWith(".")) {  //0.35 format后字符串为".35"，为了处理该种情况
-            s = "0" + s
-        }
-        return s
+    fun doubleFormat(value: Double): String {
+        val decimalFormat = DecimalFormat("###################.###########")
+        return decimalFormat.format(value)
     }
 
     fun isEmpty(str: String?): Boolean {
@@ -167,11 +156,7 @@ object StringUtils {
             return true
         }
         val temp = str.replace(" ", "")
-        if (temp.length == 0 || "null" == temp || "NULL" == temp) {
-            return true
-        } else {
-            return false
-        }
+        return !(temp.isNotEmpty() && "null" != temp && "NULL" != temp)
     }
 
     /**
