@@ -159,6 +159,10 @@ object StringUtils {
         return !(temp.isNotEmpty() && "null" != temp && "NULL" != temp)
     }
 
+    fun isNotEmpty(str: String?): Boolean {
+        return !isEmpty(str)
+    }
+
     /**
      * 将银行卡号后12位以空格隔开，并且除了最后4位，都以*号代替
      * @param s
