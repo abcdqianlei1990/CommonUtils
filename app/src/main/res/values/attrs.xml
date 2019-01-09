@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundedImageView">
+    <attr name="riv_radius" format="dimension"/>
+    <attr name="riv_topLeftRadius" format="dimension"/>
+    <attr name="riv_topRightRadius" format="dimension"/>
+    <attr name="riv_bottomLeftRadius" format="dimension"/>
+    <attr name="riv_bottomRightRadius" format="dimension"/>
+</declare-styleable>
+</resources>
