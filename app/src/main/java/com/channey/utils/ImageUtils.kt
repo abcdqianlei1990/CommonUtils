@@ -1,14 +1,15 @@
 package com.channey.utils
 
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.PixelFormat
+import android.content.Context
+import android.content.Intent
+import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.util.Base64
-import java.io.ByteArrayOutputStream
-import java.io.IOException
-import android.graphics.BitmapFactory
-import java.io.ByteArrayInputStream
+import android.media.ExifInterface
+import android.net.Uri
+import android.util.Log
+import android.widget.Toast
+import java.io.*
 
 
 /**
@@ -127,5 +128,106 @@ object ImageUtils {
         val isBm = ByteArrayInputStream(baos.toByteArray())// 把压缩后的数据baos存放到ByteArrayInputStream中
         val bitmap = BitmapFactory.decodeStream(isBm, null, null)// 把ByteArrayInputStream数据生成图片
         return bitmap
+    }
+
+    /**
+     * 保存图片到本地
+     * @param context
+     * @param path 图片源文件路径
+     * @param name 目标文件名
+     */
+    fun saveImg2Local(context: Context, path: String?, name:String):Boolean{
+        if (StringUtils.isEmpty(path)) return false
+        try {
+            var sourceFile = File(path)
+            var sdcardPath = System.getenv("EXTERNAL_STORAGE")  //获得sd卡路径
+            var dir = "$sdcardPath/"    //图片保存的文件夹名
+            var dirFile = File(dir)    //已File来构建
+            if (!dirFile.exists()) {   //如果不存在  就mkdirs()创建此文件夹
+                dirFile.mkdirs()
+            }
+            var file = File(dir + name)    //将要保存的图片文件
+            if (file.exists()) {
+                Toast.makeText(context, "该图片已存在!", Toast.LENGTH_SHORT).show()
+                return false
+            }
+            sourceFile.copyTo(file,true)
+            var uri = Uri.fromFile(file)    //获得图片的uri
+            context.sendBroadcast( Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri))  //发送广播通知更新图库，这样系统图库可以找到这张图片
+            return true
+
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        }
+        return false
+    }
+
+    /**
+     * 保存图片到本地
+     * @param context
+     * @param bitmap 图片源文件
+     * @param name 目标文件名
+     */
+    fun saveImg2Local(context: Context, bitmap: Bitmap, name:String):Boolean{
+        try {
+            var sdcardPath = System.getenv("EXTERNAL_STORAGE")  //获得sd卡路径
+            var dir = "$sdcardPath/"    //图片保存的文件夹名
+            var dirFile = File(dir)    //已File来构建
+            if (!dirFile.exists()) {   //如果不存在  就mkdirs()创建此文件夹
+                dirFile.mkdirs()
+            }
+            var file = File(dir + name)    //将要保存的图片文件
+            if (file.exists()) {
+                Toast.makeText(context, "该图片已存在!", Toast.LENGTH_SHORT).show()
+                return false
+            }
+
+            var outputStream = FileOutputStream(file)   //构建输出流
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)  //compress到输出outputStream
+            var uri = Uri.fromFile(file)    //获得图片的uri
+            context.sendBroadcast( Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri))  //发送广播通知更新图库，这样系统图库可以找到这张图片
+            return true
+
+        } catch (e: FileNotFoundException) {
+            e.printStackTrace()
+        }
+        return false
+    }
+
+    /**
+     * 读取图片属性：旋转的角度
+     * @param path 图片绝对路径
+     * @return degree旋转的角度
+     */
+
+    fun getImageDegree(path:String):Int {
+        var degree = 0;
+        try {
+            var exifInterface = ExifInterface(path);
+            var orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+            when (orientation) {
+                ExifInterface.ORIENTATION_ROTATE_90 -> degree = 90
+                ExifInterface.ORIENTATION_ROTATE_180 -> degree = 180
+                ExifInterface.ORIENTATION_ROTATE_270 -> degree = 270
+            }
+        } catch (e: IOException) {
+            e.printStackTrace();
+        }
+        return degree;
+    }
+
+    /**
+     * 旋转图片
+     * @param degree
+     * @param bitmap
+     * @return Bitmap
+     */
+    fun rotateImage(degree: Int, bitmap: Bitmap): Bitmap {
+        //旋转图片 动作
+        val matrix = Matrix()
+        matrix.postRotate(degree.toFloat())
+        // 创建新的图片
+        return Bitmap.createBitmap(bitmap, 0, 0,
+                bitmap.width, bitmap.height, matrix, true)
     }
 }
