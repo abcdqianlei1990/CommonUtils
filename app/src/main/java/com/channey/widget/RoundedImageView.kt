@@ -33,7 +33,8 @@ class RoundedImageView : AppCompatImageView {
     private fun initPaint() {
         paint = Paint()
         paint!!.color = Color.WHITE
-        paint!!.isAntiAlias = true
+        paint!!.isAntiAlias
+//        paint!!.isAntiAlias = true    //设为true会有背景图片的边线露出来
     }
 
     constructor(context: Context) : super(context) {
