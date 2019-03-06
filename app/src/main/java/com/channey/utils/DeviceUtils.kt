@@ -189,4 +189,24 @@ object DeviceUtils {
         }
         return null
     }
+
+    /**
+     * 当前网络是否可用
+     */
+    fun isNetWorkAvailable(activity: Context): Boolean {
+        val apnType = getConnectedType(activity)
+        return apnType >= 0
+    }
+
+    /**
+     * 获取当前网络连接的类型信息
+     * @return
+     */
+    fun getConnectedType(context: Context): Int {
+        val mConnectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val mNetworkInfo = mConnectivityManager.activeNetworkInfo
+        return if (mNetworkInfo != null && mNetworkInfo.isAvailable) {
+            mNetworkInfo.type
+        } else -1
+    }
 }
