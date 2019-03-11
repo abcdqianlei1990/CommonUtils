@@ -35,7 +35,7 @@ object ShapeUtil {
             var orientation:GradientDrawable.Orientation?
             try {
                 solidColor = properties[PROPERTY_SOLID_COLOR] as Int?
-            }catch (e:ClassCastException){
+            }catch (e:Throwable){
                 throw Exception("solidColor must be a integer value.")
             }
             try {
