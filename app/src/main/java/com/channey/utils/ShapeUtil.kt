@@ -88,10 +88,12 @@ object ShapeUtil {
             if (solidColor != null) drawable.setColor(solidColor)
             if (colors != null && colors.isNotEmpty()) drawable.colors = colors
             if (orientation != null) drawable.orientation = orientation
-            if (strokeColor != null || strokeWidth != null) {
-                if (strokeColor == null) strokeColor = Color.WHITE
-                if (strokeWidth == null) strokeWidth = 0
-                drawable.setStroke(strokeWidth,strokeColor)
+            if (strokeColor != null){
+                var w = 1
+                if (strokeWidth != null) {
+                    w =  strokeWidth
+                }
+                drawable.setStroke(w,strokeColor!!)
             }
             if (leftTopRadius != null || rightTopRadius != null || leftBottomRadius != null || rightBottomRadius != null){
                 if (leftTopRadius == null) leftTopRadius = 0f
@@ -129,11 +131,11 @@ object ShapeUtil {
      */
     fun setShape(
             view: View,
-            solidColor:Int = Color.WHITE,
+            solidColor:Int? = null,
             gradientColors:IntArray ?= null,
             orientation:GradientDrawable.Orientation ?= null,
-            strokeWidth:Int = 1,
-            strokeColor:Int = Color.WHITE,
+            strokeWidth:Int? = null,
+            strokeColor:Int? = null,
             radius:Float = 0f,
             leftTopRadius:Float = 0f,
             rightTopRadius:Float = 0f,
@@ -141,10 +143,16 @@ object ShapeUtil {
             rightBottomRadius:Float = 0f
     ){
         var drawable = GradientDrawable()
-        drawable.setColor(solidColor)
+        if (solidColor != null) drawable.setColor(solidColor)
         if (gradientColors != null && gradientColors.isNotEmpty()) drawable.colors = gradientColors
         if (orientation != null) drawable.orientation = orientation
-        drawable.setStroke(strokeWidth,strokeColor)
+        if (strokeColor != null){
+            var w = 1
+            if (strokeWidth != null){
+                w = strokeWidth
+            }
+            drawable.setStroke(w,strokeColor)
+        }
         if (leftTopRadius != 0f || leftBottomRadius != 0f || rightTopRadius != 0f || rightBottomRadius != 0f){
             var array = floatArrayOf(
                     leftTopRadius,
