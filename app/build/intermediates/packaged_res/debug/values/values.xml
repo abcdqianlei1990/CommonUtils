@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="FF6200">#FF6200</color>
+    <color name="FF9B00">#FF9B00</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <declare-styleable name="RoundedImageView"><attr format="dimension" name="riv_radius"/><attr format="dimension" name="riv_topLeftRadius"/><attr format="dimension" name="riv_topRightRadius"/><attr format="dimension" name="riv_bottomLeftRadius"/><attr format="dimension" name="riv_bottomRightRadius"/></declare-styleable>
+    <string name="app_name">My Application</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>

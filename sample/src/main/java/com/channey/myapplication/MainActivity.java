@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private void shapeUtilTest(){
         Map<String,Object> map = new HashMap<>();
         map.put(ShapeUtil.PROPERTY_RADIUS,20f);
-        map.put(ShapeUtil.PROPERTY_SOLID_COLOR,Color.YELLOW);
+//        map.put(ShapeUtil.PROPERTY_SOLID_COLOR,Color.YELLOW);
         map.put(ShapeUtil.PROPERTY_LEFTTOP_RADIUS,30f);
         map.put(ShapeUtil.PROPERTY_RIGHTTOP_RADIUS,30f);
         map.put(ShapeUtil.PROPERTY_RIGHTBOTTOM_RADIUS,60f);
